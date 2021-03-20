@@ -11,3 +11,18 @@
     margin-top: 50px;
     text-align: center;
 }
+
+#result {
+    display: flex;
+}
+
+#result div {
+    padding-left: 10px;
+}
+
+button {
+    width: 150px;
+    height: 50px;
+    border-radius: 5px;
+    background-color: aquamarine;
+}

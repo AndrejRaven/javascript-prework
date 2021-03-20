@@ -1,6 +1,7 @@
 
-var argComputerMove, argMoveId, argPlayerMove, computerMove, playerInput, playerMove, randomNumber, argButtonName, buttonPaper, buttonRock, buttonScissors;
-
+let argComputerMove, argMoveId, argPlayerMove, computerMove, playerInput, playerMove, randomNumber, argButtonName, buttonPaper, buttonRock, buttonScissors;
+let win = 0;
+let loose = 0;
 
 function getMoveName(argMoveId) {
   console.log('wywołano funkcję getMoveName z argumentem: ' + argMoveId);
@@ -20,14 +21,22 @@ function displayResult(argPlayerMove, argComputerMove) {
   console.log('wywołano funkcję displayResults z argumentami: ' + argPlayerMove + ', ' + argComputerMove);
   if (argPlayerMove == 'papier' && argComputerMove == 'kamień') {
     printMessage('Wygrywasz!');
+    win += 1;
+    console.log("Wygranych przez gracza: " + win);
   } else if (argPlayerMove == 'kamień' && argComputerMove == 'nożyce') {
     printMessage('Wygrywasz!');
+    win += 1;
+    console.log("Wygranych przez gracza: " + win);
   } else if (argPlayerMove == 'nożyce' && argComputerMove == 'papier') {
     printMessage('Wygrywasz!');
+    win += 1;
+    console.log("Wygranych przez gracza: " + win);
   } else if (argPlayerMove == argComputerMove) {
     printMessage('Remis');
   } else {
     printMessage('Przegrywasz :(');
+    loose += 1;
+    console.log("Wygranych przez computer: " + loose);
   }
   printMessage('Zagrałem ' + argComputerMove + ', a Ty ' + argPlayerMove);
 }
@@ -43,6 +52,9 @@ function buttonClicked(argButtonName) {
     computerMove = getMoveName(randomNumber);
     console.log('ruch komputera to: ' + computerMove);
     displayResult(playerMove, computerMove);
+    clearResult();
+    printResult("Player: " + win);
+    printResult("Computer: " + loose);
   }
 
   buttonRock = document.getElementById('button-rock');
@@ -51,7 +63,6 @@ function buttonClicked(argButtonName) {
   buttonPaper.addEventListener('click', function(){ buttonClicked('papier'); });
   buttonScissors = document.getElementById('button-scissors');
   buttonScissors.addEventListener('click', function(){ buttonClicked('nożyce'); });
-
 
 
 
