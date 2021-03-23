@@ -1,19 +1,19 @@
-function printMessage(msg){
-	var div = document.createElement('div');
+function printMessage(msg) {
+	const div = document.createElement('div');
 	div.innerHTML = msg;
 	document.getElementById('messages').appendChild(div);
 }
 
-function clearMessages(){
+function clearMessages() {
 	document.getElementById('messages').innerHTML = '';
 }
 
-function clearResult(){
+function clearResult() {
 	document.getElementById('result').innerHTML = '';
 }
 
-function printResult(msg){
-	var div = document.createElement('div');
+function printResult(msg) {
+	const div = document.createElement('div');
 	div.innerHTML = msg;
 	document.getElementById('result').appendChild(div);
 }
