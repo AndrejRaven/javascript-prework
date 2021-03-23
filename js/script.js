@@ -1,7 +1,7 @@
 
-let argComputerMove, argMoveId, argPlayerMove, computerMove, playerInput, playerMove, randomNumber, argButtonName, buttonPaper, buttonRock, buttonScissors;
-let win = 0;
-let loose = 0;
+let argComputerMove, argMoveId, argPlayerMove, computerMove, playerInput, playerMove, randomNumber, argButtonName, buttonPaper, buttonScissors;
+let win = 0,
+    loose = 0;
 
 function getMoveName(argMoveId) {
   console.log('wywołano funkcję getMoveName z argumentem: ' + argMoveId);
@@ -57,7 +57,7 @@ function buttonClicked(argButtonName) {
   printResult("Computer: " + loose);
 }
 
-buttonRock = document.getElementById('button-rock');
+const buttonRock = document.getElementById('button-rock');
 buttonRock.addEventListener('click', function () { buttonClicked('kamień'); });
 buttonPaper = document.getElementById('button-paper');
 buttonPaper.addEventListener('click', function () { buttonClicked('papier'); });
